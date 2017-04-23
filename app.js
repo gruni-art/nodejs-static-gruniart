@@ -17,7 +17,7 @@
 const express = require('express');
 
 // We require semi-static
-const semiStatic = require('semi-static');
+const semiStatic = require('./semi-static.js'); // NOTE the npm version currently has a bug, so use our custom version instead
 
 // Init our app
 const app = express();
