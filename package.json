@@ -40,7 +40,8 @@
     ]
   },
   "dependencies": {
-    "express": "~4.15.2"
+    "express": "~4.15.2",
+    "semi-static": "^1.2.0"
   },
   "devDependencies": {
     "ava": "~0.19.1",

@@ -1,3 +1,13 @@
+### NodeJS Static
+
+Based on 'Semi-static' at https://www.npmjs.com/package/semi-static
+
+Simple, lazy way to serve a directory of semi-static pages in express.js. Handy for building quick "static" pages inside an otherwise "dynamic" app.
+
+Include the following node_modules in package.json:
+
+- semi-static; which depends on express, pug, and jshint
+
 ### Using Google Cloud Shell
 
 Cloud Shell is a built-in command line tool for the console. We're going to use Cloud Shell to deploy our app.
