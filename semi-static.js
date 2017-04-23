@@ -28,7 +28,7 @@ function checkExists(config, file, callback) {
     fs.access(file, fs.constants.R_OK, function (err) {
         if (err != null) {
             callback(null, file);
-        } else if (config.defaultExt && err.code === "ENOENT" &&
+        } else if (config.defaultExt && err != null && err.code === "ENOENT" &&
                 file.slice(-5) === ".pug") {
             fs.access(file.slice(0, -5) + ".jade", fs.constants.R_OK,
                 function (err) {
