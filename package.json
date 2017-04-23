@@ -1,8 +1,8 @@
 {
-  "name": "nodejs-hello-world-gruniart",
+  "name": "nodejs-static-gruniart",
   "version": "1.0.0",
   "description": "End to end sample for running Node.js applications on Google Cloud Platform",
-  "repository": "https://github.com/gruni-art/nodejs-hello-world-gruniart",
+  "repository": "https://github.com/gruni-art/nodejs-static-gruniart",
   "private": true,
   "scripts": {
     "start": "node app.js",
