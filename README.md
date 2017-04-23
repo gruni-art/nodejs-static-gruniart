@@ -32,7 +32,7 @@ Use Cloud Shell to clone and navigate to the code. The sample code is cloned fro
 In Cloud Shell enter:
 
 ```javascript
-TUTORIALDIR=~/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-22-21-02
+TUTORIALDIR=~/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-23-11-17
 ```
 
 Clone a sample repository:
@@ -44,7 +44,7 @@ git clone https://github.com/gruni-art/nodejs-static-gruniart.git $TUTORIALDIR
 You will be prompted with:
 
 ```javascript
-Cloning into '/home/lana_gruni/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-22-21-02'...
+Cloning into '/home/lana_gruni/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-23-11-17'...
 remote: Counting objects: 1540, done.
 remote: Compressing objects: 100% (79/79), done.
 remote: Total 1540 (delta 67), reused 21 (delta 21), pack-reused 1438
@@ -61,7 +61,7 @@ cd $TUTORIALDIR
 You will be prompted with:
 
 ```javascript
-lana_gruni@long-temple-164810:~/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-22-21-02$
+lana_gruni@long-temple-164810:~/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-23-11-17$
 ```
 
 Testing your app
@@ -89,7 +89,7 @@ npm start
 You will be prompted with:
 
 ```javascript
-> nodejs-getting-started@1.0.0 start /home/lana_gruni/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-22-21-02
+> nodejs-getting-started@1.0.0 start /home/lana_gruni/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-23-11-17
 > node app.js
 
 App listening on port 8081
@@ -121,7 +121,7 @@ You will be prompted with:
 
 ```javascript
 You are about to deploy the following services:
- - long-temple-164810/default/20170422t170830 (from [/home/lana_gruni/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-22-21-02/app.yaml])
+ - long-temple-164810/default/20170422t170830 (from [/home/lana_gruni/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-23-11-17/app.yaml])
      Deploying to URL: [https://long-temple-164810.appspot.com]
 
 Do you want to continue (Y/n)?  
@@ -144,7 +144,7 @@ You can stream logs from the command line by running:
 
 To view your application in the web browser run:
   $ gcloud app browse
-lana_gruni@long-temple-164810:~/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-22-21-02$ 
+lana_gruni@long-temple-164810:~/src/long-temple-164810/nodejs_mvms_quickstart-2017-04-23-11-17$ 
 ```
 
 The app will be deployed.
@@ -153,7 +153,7 @@ The app will be deployed.
 
 Open a web browser and browse to http://long-temple-164810.appspot.com/
 
-The page will show: 'Hello, Lana Gruni!'
+The page will show: 'Hello, Lana Gruni Semi-Static!'
 
 Congratulations! Your app has been deployed. The default URL of your app is long-temple-164810.appspot.com  Click the URL to visit it.
 

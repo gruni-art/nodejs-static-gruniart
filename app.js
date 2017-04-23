@@ -13,16 +13,46 @@
 
 'use strict';
 
+// We start with express
 const express = require('express');
 
+// We require semi-static
+const semiStatic = require('semi-static');
+
+// Init our app
 const app = express();
 
+// Serve our static files (css, js, images, etc.)
+// semi-static doesn't do this for us.
+app.use(express.static(__dirname + "/public"));
+
+// Tell express to use pug
+app.set("view engine", "pug");
+
+// If you're using express out of the box, you can just
+// do this. And it will assume you put your pug files
+// into 'views/static' and will look for an 'index.pug' file.
+// You can also pass it a static context object,
+// that will get passed to the template engine
+app.get("*", semiStatic({
+    passReq: true,
+    context: {static: true}
+}));
+
+// NO LONGER IN USE
 // [START hello_world]
 // Say hello!
-app.get('/', (req, res) => {
-  res.status(200).send('Hello, Lana Gruni Semi-Static!');
-});
+// app.get('/', (req, res) => {
+//   res.status(200).send('Hello, Lana Gruni Semi-Static!');
+// });
 // [END hello_world]
+
+// we can still have a normal 404 at the end
+// because it will only do something if there's
+// a path that matches.
+app.all("*", function (req, res) {
+    res.status(404).send("not found");
+});
 
 if (module === require.main) {
   // [START server]
