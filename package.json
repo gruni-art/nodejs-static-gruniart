@@ -41,8 +41,7 @@
   },
   "dependencies": {
     "express": "~4.15.2",
-    "pug": "^2.0.0-beta.12"//,
-    // "semi-static": "^1.2.0"
+    "pug": "^2.0.0-beta.12"
   },
   "devDependencies": {
     "ava": "~0.19.1",
