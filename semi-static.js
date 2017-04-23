@@ -6,15 +6,15 @@ var path = require("path");
 function defaults(config) {
     var ret = {};
 
-    if (config.folderPath !== null) {
+    if (config.folderPath != null) {
         ret.folderPath = config.folderPath;
     } else {
         ret.folderPath = path.dirname(require.main.filename) + "/views/static";
     }
 
     ret.defaultExt = config.fileExt == null;
-    ret.fileExt = config.fileExt !== null ? config.fileExt : "pug";
-    ret.root = config.root !== null ? config.root : "/";
+    ret.fileExt = config.fileExt != null ? config.fileExt : "pug";
+    ret.root = config.root != null ? config.root : "/";
     ret.passReq = !!config.passReq;
     ret.context = config.context;
     return ret;
@@ -26,13 +26,13 @@ function clean(url) {
 
 function checkExists(config, file, callback) {
     fs.access(file, fs.constants.R_OK, function (err) {
-        if (err !== null) {
+        if (err != null) {
             callback(null, file);
         } else if (config.defaultExt && err.code === "ENOENT" &&
                 file.slice(-5) === ".pug") {
             fs.access(file.slice(0, -5) + ".jade", fs.constants.R_OK,
                 function (err) {
-                    if (err !== null) callback(err);
+                    if (err != null) callback(err);
                     else callback(null, file);
                 });
         } else {
@@ -68,7 +68,7 @@ module.exports = function (config) {
         }
 
         checkExists(config, file, function (err, file) {
-            if (err !== null) {
+            if (err != null) {
                 next(err);
             } else if (!config.context) {
                 res.render(file, {
