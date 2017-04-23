@@ -16,43 +16,25 @@
 // We start with express
 const express = require('express');
 
-// We require semi-static
-const semiStatic = require('./semi-static.js'); // NOTE the npm version currently has a bug, so use our custom version instead
+const path = require('path');
 
 // Init our app
 const app = express();
 
 // Serve our static files (css, js, images, etc.)
-// semi-static doesn't do this for us.
-app.use(express.static(__dirname + "/public"));
-
-// Tell express to use pug
-app.set("view engine", "pug");
-
-// If you're using express out of the box, you can just
-// do this. And it will assume you put your pug files
-// into 'views/static' and will look for an 'index.pug' file.
-// You can also pass it a static context object,
-// that will get passed to the template engine
-app.get("*", semiStatic({
-    passReq: true,
-    context: {static: true}
-}));
+// This will tell Express to match any routes for files found in this folder and deliver the files directly to the browser. 
+// This should be done before any other routes are defined and before the server is set up to listen.
+// When Express receives a request for a route it is now checking to see whether such a file path exists in the static directory we defined. 
+// If it does it delivers this directly to the browser with no need for us to add in any routes.
+app.use(express.static(path.join(__dirname, 'public')));
 
 // NO LONGER IN USE
 // [START hello_world]
 // Say hello!
-// app.get('/', (req, res) => {
-//   res.status(200).send('Hello, Lana Gruni Semi-Static!');
-// });
-// [END hello_world]
-
-// we can still have a normal 404 at the end
-// because it will only do something if there's
-// a path that matches.
-app.all("*", function (req, res) {
-    res.status(404).send("not found");
+app.get('/hello', (req, res) => {
+   res.status(200).send('Hello, Lana Gruni Semi-Static!');
 });
+// [END hello_world]
 
 if (module === require.main) {
   // [START server]
